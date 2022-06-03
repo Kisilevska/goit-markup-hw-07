@@ -1,0 +1,86 @@
+/*======Header======*/
+
+.header {
+    border-bottom: 1px solid #ECECEC;
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.logo{
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: var(--accent-color);
+
+    margin-right: 93px;
+
+    &--dark {
+        color: var(--title-text-color);
+    }
+}
+
+
+.nav__item {
+    margin-right: 50px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+
+.nav__menu {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--title-text-color);
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.header__list {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+}
+
+.link--address-black {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    color: var(--primary-text-color);
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+  
+/*=======Контакты иконки=====*/
+.nav__icom-contact {
+    margin-right: 10px;
+
+    fill: var(--primary-text-color);
+
+    transition-property: fill;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--timing-function);
+}
+
+.link:hover .nav__icom-contact,
+.link:focus .nav__icom-contact {
+fill: var(--accent-color);
+}
