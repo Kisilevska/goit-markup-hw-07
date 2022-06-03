@@ -48,11 +48,11 @@ img {
     margin: 0;
 }
 
-.nav-item .link-current {
+.nav__item .link-current {
     color: var(--accent-color); 
  }
 
- .menu-nav.link-current::after {
+.nav__menu.link-current::after {
      position: absolute;
      bottom: 0; 
      left: 0;
@@ -82,11 +82,24 @@ img {
     margin-right: auto;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
      /*======Header======*/
 .header {
     border-bottom: 1px solid #ECECEC;
 }
-.header-container {
+.header__container {
     display: flex;
     align-items: center;
 }
@@ -100,26 +113,26 @@ img {
 
     margin-right: 93px;
 }
-.logo-dark {
+.logo--dark {
     color: var(--title-text-color);
 
 }
 
-.nav-list,
-.feature-list,
-.about-list,
-.team-list {
+.nav__list,
+.feature__list,
+.about__list,
+.team__list {
     display: flex;
     align-items: center;
 }
-.nav-item {
+.nav__item {
     margin-right: 50px;
 }
 
-.nav-item:last-child {
+.nav__item:last-child {
     margin-right: 0;
 }
-.menu-nav {
+.nav__menu {
     position: relative;
     font-size: 14px;
     font-weight: 500;
@@ -128,8 +141,8 @@ img {
     color: var(--title-text-color);
 }
 
-.menu-nav,
-.address-black {
+.nav__menu,
+.link--address-black {
     display: flex;
     align-items: center;
 
@@ -137,14 +150,14 @@ img {
     padding-bottom: 32px;
 }
 
-.header-list {
+.header__list {
     display: flex;
     align-items: center;
 
     margin-left: auto;
 }
 
-.address-black {
+.link--address-black {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -154,7 +167,7 @@ img {
 }
   
 /*=======Контакты иконки=====*/
-.icom-contact {
+.nav__icom-contact {
     margin-right: 10px;
 
     fill: var(--primary-text-color);
@@ -163,8 +176,8 @@ img {
     transition-duration: var(--duration);
     transition-timing-function: var(--timing-function);
 }
-.link:hover .icom-contact,
-.link:focus .icom-contact {
+.link:hover .nav__icom-contact,
+.link:focus .nav__icom-contact {
     fill: var(--accent-color);
 }
 
@@ -242,7 +255,7 @@ img {
 
   /*=======Модальное окно - форма======*/
 
-  .modal-titl {
+  .modal-title {
     display: block;  
     font-weight: 700;
     font-size: 20px;
@@ -254,13 +267,13 @@ img {
     margin-bottom: 12px;
   }
 
-  .form-group {
+  .modal-form__group {
       margin-bottom: 10px;
   }
-  .modal-label {
+  .modal-form__label {
       position: relative;
   }
-  .modal-data {
+  .modal-form__data {
       display: block;
       font-weight: 400;
       font-size: 12px;
@@ -272,7 +285,7 @@ img {
 
       margin-bottom: 4px;
   }
-.modal-input {
+.modal-form__input {
     width: 100%;
     height: 40px;
 
@@ -286,14 +299,14 @@ img {
 
 .coment:hover,
 .coment:focus,
-.modal-input:hover,
-.modal-input:focus {
+.modal-form__input:hover,
+.modal-form__input:focus {
     outline: 0;
     border-color: var(--accent-color);
     cursor: pointer;
 }
 
-.icon-form {
+.modal-form__icon {
     position: absolute;
     bottom: 1px;
     left: 10px;
@@ -302,12 +315,12 @@ img {
     transition: fill var(--duration) var(--timing-function);
 }
 
-.modal-input:hover ~ .icon-form,
-.modal-input:focus ~ .icon-form {
+.modal-form__input:hover ~ .modal-form__icon,
+.modal-form__input:focus ~ .modal-form__icon {
     fill: var(--accent-color);
 }
 
-.form-group-coment {
+.modal-form-coment {
     margin-bottom: 20px;
 }
 
@@ -344,7 +357,7 @@ textarea {
     resize: none;
   }
 
-.form-group-consent {
+.modal-form-consent {
     margin-bottom: 30px;
 }
 
@@ -365,7 +378,7 @@ textarea {
     transition: background-color var(--duration) var(--timing-function);
 }
 
-.custom-checkbox {
+.modal-form__custom-checkbox {
     width: 16px;
     height: 15px;
     margin-right: 10px;
@@ -382,12 +395,12 @@ textarea {
 
 }
 
-.checkbox:checked + .custom-checkbox {
+.modal-form__checkbox:checked + .modal-form__custom-checkbox {
     background-color: var(--accent-color);
     outline: 2px solid var(--accent-color)
 }
 
-.modal-check {
+.modal-form__check {
     fill: var(--primary-white-color);
     opacity: 0;
 
@@ -395,11 +408,11 @@ textarea {
                 background-color var(--duration) var(--timing-function);
 }
 
-.checkbox:checked + .custom-checkbox .modal-check {
+.modal-form__checkbox:checked + .modal-form__custom-checkbox .modal-form__check {
     opacity: 1;
 }
 
-.modal-link {
+.modal-form__link {
     color: var(--accent-color);
     font-weight: 400;
     font-size: 14px;
@@ -408,8 +421,7 @@ textarea {
     letter-spacing: 0.03em;
 }
 
-
-.submit {
+.btn-submit {
     min-width: 200px;
     min-height: 50px;
 
@@ -435,8 +447,8 @@ textarea {
     transition: background-color var(--duration) var(--timing-function);
 }
 
-.submit:hover,
-.submit:focus {
+.btn-submit:hover,
+.btn-submit:focus {
 
     background: #188CE8;
     cursor: pointer;
@@ -458,7 +470,7 @@ textarea {
     background-repeat: no-repeat;
 }
  
-.hero-title {
+.hero__title {
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
@@ -511,29 +523,18 @@ textarea {
 
 
 /*Особенности*/
- .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
 
-.feature-item {
+
+.feature__item {
     width: 270px;
     margin-right: 30px;
 }
 
-.feature-item:last-child { 
+.feature__item:last-child { 
     margin-right: 0;
 }
 
-.feature-subtitle {
+.feature__subtitle {
     font-size: 14px;
     font-weight: 700;
     line-height: 1.14;
@@ -544,7 +545,7 @@ textarea {
 
     margin-bottom: 10px;
 }
-.description {
+.feature__description {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
@@ -552,7 +553,7 @@ textarea {
 }
 
 /*======Особености иконки========*/
-.feature-group {
+.feature__group {
     width: 270px;
     height: 120px;
 
@@ -567,7 +568,7 @@ textarea {
 }
 
 /*Чем мы занимаемся*/
-.section-title {
+.section__title {
     font-size: 36px;
     font-weight: 700;
     line-height: 1.16;
@@ -579,17 +580,17 @@ textarea {
     margin-bottom: 50px;
 }
 
-.about-item {
+.about__item {
     position: relative;
     position: relative;
     margin-right: 30px;
 }
 
-.about-item:last-child {
+.about__item:last-child {
     margin-right: 0;
 }
 
-.about-label {
+.about__label {
 position: absolute;
 bottom: 0;
 height: 70px;
@@ -599,7 +600,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
-.about-text {
+.about__text {
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -613,23 +614,23 @@ justify-content: center;
     background-color:  #F5F4FA;
 }
 
-.member-item {
+.team__member-item {
     background-color: var(--primary-white-color);
 
     margin-right: 30px;
 }
 
-.member-item:last-child {
+.team__member-item:last-child {
     margin-right: 0;
 }
-.member-group {
+.team__member-group {
     padding-top: 30px;
     padding-bottom: 30px;
 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 }
-.member-title {
+.team__title {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.18;
@@ -639,7 +640,7 @@ justify-content: center;
 
     margin-bottom: 10px;
 }
-.member-position {
+.team__position {
     font-size: 16px;
     line-height: 1.18;
     letter-spacing: 0.03em;
@@ -649,21 +650,21 @@ justify-content: center;
     margin-bottom: 16px;
 }
 /*=======Социфльные иконки======*/
-.social-list {
+.socials__group {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.social-item {
+.socials__item {
     margin-right: 10px;
 }
 
-.social-item:last-child {
+.socials__item:last-child {
     margin-right: 0;
 }
 
-.social-link {
+.socials__link {
     display: flex;
 
     align-items: center;
@@ -681,39 +682,39 @@ justify-content: center;
     transition-timing-function: var(--timing-function);
 }
 
-.social-link:hover,
-.social-link:focus {
+.socials__link:hover,
+.socials__link:focus {
     background-color: var(--accent-color);
 }
  
-.social-icom {
+.socials__icom {
     fill: #AFB1B8;
 
     transition-property: fill;
     transition-duration: var(--duration);
     transition-timing-function: var(--timing-function);
 }
-.social-link:hover .social-icom,
-.social-link:focus .social-icom {
+.socials__link:hover .socials__icom,
+.socials__link:focus .socials__icom {
     fill: var(--primary-white-color);
 }
 
 /*Постоянные клиенты*/
 
-.clients-list {
+.clients {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
-.clients-item {
+.clients__item {
    margin-right: 30px;
 }
 
-.clients-item:last-child {
+.clients__item:last-child {
     margin-right: 0;
 }
-.clients-link {
+.clients__link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -729,7 +730,7 @@ justify-content: center;
     transition-timing-function: var(--timing-function);
 }
 
-.clients-icom {
+.clients__icom {
     fill: #AFB1B8;
 
     transition-property: fill;
@@ -737,13 +738,13 @@ justify-content: center;
     transition-timing-function: var(--timing-function);
 }
 
-.clients-link:hover,
-.clients-link:focus {
+.clients__link:hover,
+.clients__link:focus {
     border-color: var(--accent-color);
 }
 
-.clients-link:hover .clients-icom,
-.clients-link:focus .clients-icom{
+.clients__link:hover .clients__icom,
+.clients__link:focus .clients__icom{
     fill: var(--accent-color);
 }
 /*Подвал*/
@@ -845,8 +846,8 @@ justify-content: center;
 .join-icom {
     fill: var(--primary-white-color);
 }
-.join-link:hover .social-icom,
-.join-link:focus .social-icom {
+.join-link:hover .socials-icom,
+.join-link:focus .socials-icom {
     fill: var(--primary-white-color);
 }
 
@@ -916,7 +917,7 @@ justify-content: center;
 
 /*Портфолио*/
 
-.filter-list{
+.filter{
 display: flex;
 align-items: center;
 justify-content: center;
@@ -924,8 +925,8 @@ justify-content: center;
 margin-bottom: 50px;
 }
 
-.all-btn,
-.filter-btn  {
+.btn--all,
+.btn--filter  {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.62;
@@ -937,21 +938,21 @@ margin-bottom: 50px;
     padding: 6px 22px;
 }
 
-.filter-item {
+.filter__item {
     margin-right: 8px;
 }
 
-.filter-item:last-child {
+.filter__item:last-child {
     margin-right: 0;
 }
 
-.all-btn {
+.btn--all {
     background-color: var(--accent-color);
     color: var(--primary-white-color);
     cursor: pointer;
 }
 
-.filter-btn {
+.btn--filter {
     background-color: #F5F4FA;
     color: var(--title-text-color);
     cursor: pointer;
@@ -961,8 +962,8 @@ margin-bottom: 50px;
     transition-timing-function: var(--timing-function);
 }
 
-.filter-btn:hover,
-.filter-btn:focus {
+.btn--filter:hover,
+.btn--filter:focus {
     background-color: #188ce8;;
     color: var(--primary-white-color);
 
@@ -971,7 +972,9 @@ margin-bottom: 50px;
                 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.project-list {
+/*project*/
+
+.project {
     display: flex;
     flex-wrap: wrap;
 
@@ -979,19 +982,19 @@ margin-bottom: 50px;
     margin-right: -15px;
 }
 
-.project-item {
+.project__item {
     margin-right: 30px;
     margin-bottom: 30px;
     flex-basis: calc(100% / 3 - 30px);
 }
 
-.project-link {
+.project__link {
     display: block;
     transition: box-shadow var(--duration) var(--timing-function);
 }
 
-.project-link:hover,
-.project-link:focus {
+.project__link:hover,
+.project__link:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
                 0px 4px 4px rgba(0, 0, 0, 0.06), 
                 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -999,7 +1002,7 @@ margin-bottom: 50px;
 }
 
 
-.project-title {
+.project__title {
     font-size: 18px;
     font-weight: 700;
     line-height: 2;
@@ -1009,7 +1012,7 @@ margin-bottom: 50px;
     margin-bottom: 4px;
 }
 
-.project-text {
+.project__text {
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.03em;
@@ -1017,7 +1020,7 @@ margin-bottom: 50px;
 
 }
 
-.project {
+.project-blok {
     
     padding: 20px 24px;
 
@@ -1026,11 +1029,11 @@ margin-bottom: 50px;
     border-left: 1px solid  #EEEEEE;
 }
 
-.project-overlay {
+.overlay {
     position: relative;
     overflow: hidden;
 }
-.content-overlay {
+.overlay__content {
     position: absolute;
     left: 0;
     top: 0;
@@ -1049,8 +1052,8 @@ margin-bottom: 50px;
     transition: transform var(--duration) var(--timing-function);
 }
 
-.project-link:hover .content-overlay,
-.project-link:focus .content-overlay {
+.project__link:hover .overlay__content,
+.project__link:focus .overlay__content {
     transform: translateY(0%); 
 }
 
