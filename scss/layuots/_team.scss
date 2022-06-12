@@ -1,9 +1,9 @@
 /*Наша команда*/
-.team {
+.section__team {
     background-color:  #F5F4FA;
 }
 
-.team__member-item {
+.team__item {
     background-color: var(--primary-white-color);
 
     margin-right: 30px;
@@ -13,7 +13,7 @@
     }
 }
 
-.team__member-group {
+.team__group {
     padding-top: 30px;
     padding-bottom: 30px;
 
@@ -30,7 +30,7 @@
 
     margin-bottom: 10px;
 }
-.team__position {
+.team__text {
     font-size: 16px;
     line-height: 1.18;
     letter-spacing: 0.03em;

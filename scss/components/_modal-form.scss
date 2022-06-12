@@ -10,13 +10,14 @@
     background-color: rgba(0, 0, 0, 0.2);
 
     transition: opacity var(--duration) var(--timing-function), visibility var(--duration) var(--timing-function);
+
+    &.is-hidden {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
-.backdrop.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-}
 .modal-wrapper {
     position: absolute;
 
@@ -32,6 +33,16 @@
     border-radius: 4px;
 
     transition: transform var(--duration) var(--timing-function)/*, opacity var(--duration) var(--timing-function)*/;
+
+    .backdrop.is-hidden & {
+        transform: translate(-50%, -50%) scale(0.4);
+        opacity: 0;
+      }
+    
+    .backdrop & {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
 }
 
 .modal-btn {
@@ -54,17 +65,7 @@
     cursor: pointer;
 }
 
-.backdrop.is-hidden .modal-wrapper {
-    transform: translate(-50%, -50%) scale(0.4);
-    opacity: 0;
-  }
-
-.backdrop .modal-wrapper {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-
-.icom-close:hover,
-.icom-close:focus {
+.icon-close:hover,
+.icon-close:focus {
     fill: #2196F3;;
 }

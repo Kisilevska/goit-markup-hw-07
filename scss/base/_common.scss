@@ -8,11 +8,11 @@ body{
     padding-bottom: 94px;
 }
 
-.nav__item .link-current {
+.nav__item .nav__link--current {
     color: var(--accent-color); 
  }
 
-.nav__menu.link-current::after {
+.nav__link.nav__link--current::after {
      position: absolute;
      bottom: 0; 
      left: 0;
@@ -25,18 +25,16 @@ body{
      background-color: var(--accent-color);
  }
 
- .nav__list,
-.feature__list,
-.about__list,
-.team__list {
+.nav__list,
+.feature,
+.about,
+.team {
     display: flex;
     align-items: center;
 }
 
 .address:hover,
-.address:focus,
-.link:hover,
-.link:focus {
+.address:focus {
     color: var(--accent-color);
 }
 .section__title {

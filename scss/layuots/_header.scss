@@ -18,8 +18,14 @@
 
     margin-right: 93px;
 
-    &--dark {
+    &__dark {
         color: var(--title-text-color);
+    }
+    &:hover,
+    &:focus,
+    &__dark:hover,
+    &__dark:focus {
+        color: var(--accent-color);
     }
 }
 
@@ -32,7 +38,7 @@
 }
 
 
-.nav__menu {
+.nav__link {
     position: relative;
     font-size: 14px;
     font-weight: 500;
@@ -45,16 +51,28 @@
 
     padding-top: 32px;
     padding-bottom: 32px;
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
 }
 
-.header__list {
+.contacts {
     display: flex;
     align-items: center;
 
     margin-left: auto;
 }
 
-.link--address-black {
+.contacts__item {
+    margin-right: 50px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.contacts__link {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -67,10 +85,15 @@
 
     padding-top: 32px;
     padding-bottom: 32px;
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
 }
   
 /*=======Контакты иконки=====*/
-.nav__icom-contact {
+.contacts__icon {
     margin-right: 10px;
 
     fill: var(--primary-text-color);
@@ -78,9 +101,11 @@
     transition-property: fill;
     transition-duration: var(--duration);
     transition-timing-function: var(--timing-function);
+
+    .contacts__link:hover &,
+    .contacts__link:focus & {
+        fill: var(--accent-color);
+    }
 }
 
-.link:hover .nav__icom-contact,
-.link:focus .nav__icom-contact {
-fill: var(--accent-color);
-}
+

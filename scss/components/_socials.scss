@@ -1,5 +1,5 @@
 /*=======Социфльные иконки======*/
-.socials__group {
+.socials {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,17 +35,19 @@
     }
 }
 
-.socials__icom {
+.socials__icon {
     fill: #AFB1B8;
 
     transition-property: fill;
     transition-duration: var(--duration);
     transition-timing-function: var(--timing-function);
+
+    .socials__link:hover &,
+    .socials__link:focus & {
+        fill: var(--primary-white-color);
+    }
 }
-.socials__link:hover .socials__icom,
-.socials__link:focus .socials__icom {
-    fill: var(--primary-white-color);
-}
+
 
 /*========Футер иконки=======*/
 
